@@ -1,0 +1,17 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /* rem-setting: that one rem is 10 px - rem depends on root fontsize - 16px is default - we want 10 px - therefore 62.5%  */
+  font-size: 62.5%; 
+}
+
+body {
+  /* height and widht includes the enitre box, not just for content */
+  box-sizing: border-box; 
+}
