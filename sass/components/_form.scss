@@ -14,6 +14,9 @@
     display: block;
     border-style: inherit;
     transition: all .3s;
+    @include respond(tab-port) {
+      width: 100%;
+    }
     &::-webkit-input-placeholder {
       color: $color-gray-dark-2;
     }
@@ -46,6 +49,10 @@
   &__radio-group {
     width: 49%;
     display: inline-block;
+    @include respond(tab-port) {
+      width: 100%;
+      margin-bottom: 2px;
+    }
   }
   &__radio-input {
     display: none;
