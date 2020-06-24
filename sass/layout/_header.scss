@@ -1,15 +1,32 @@
 .header {
-  height: 95vh;
+  height: 85vh;
+  // just use the small hero images -
+  // only if we have higher resolution (apple) than use the big one
   background-image: linear-gradient(
     to right bottom,
     rgba($color-primary-light, 0.8),
     rgba($color-primary-dark, 0.8)),
-    url(../img/hero.jpg);
+    url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   position: relative;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+  // if browser support this than execute the following line of code - otherwise keep care above
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    height: 95vh;
+  }
+  //only if we have apple retina screen 192dpi "," is or - for the size em just devide px/16 - media queries em!
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+         (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), // for safari
+         (min-width: 125em) {
+    background-image: linear-gradient(
+    to right bottom,
+    rgba($color-primary-light, 0.8),
+    rgba($color-primary-dark, 0.8)),
+    url(../img/hero.jpg);
+  }
 
   @include respond(phone) {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
