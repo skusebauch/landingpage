@@ -135,7 +135,9 @@
     font-weight: 100;
   }
 
-  @include respond(tab-port) {
+  // if we have a touch devise as well (hover: none) ; touchdevise would be (hover:hover)
+  @media only screen and (max-width: 56.25em),
+          only screen and (hover: none) {
     // FUNCTIONALLITY
     height: auto;
     border-radius: 3px;
