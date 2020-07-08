@@ -1,9 +1,9 @@
 .story {
   width: 75%;
   margin: 0 auto;
-  box-shadow: 0 3rem 6rem rgba($color-black, .1);
-  background-color: rgba($color-white, .16);
-  border-radius: .3rem;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: rgba($color-white, 0.16);
+  border-radius: 0.3rem;
   padding: 6rem;
   padding-left: 9rem;
   font-size: $default-font-size;
@@ -24,7 +24,7 @@
     height: 15rem;
     float: left;
     // instead of padding
-    transform: translateX(-3rem) skewx(12deg);
+    transform: translateX(-3rem) skewX(12deg);
     overflow: hidden;
     border-radius: 50%;
     @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
@@ -44,7 +44,7 @@
     height: 100%;
     transform: translate(-4rem) scale(1.4);
     backface-visibility: hidden;
-    transition: all .5s;
+    transition: all 0.5s;
   }
 
   &__text {
@@ -64,7 +64,7 @@
     font-size: 1.7rem;
     text-align: center;
     opacity: 0;
-    transition: all .5s;
+    transition: all 0.5s;
     backface-visibility: hidden;
   }
 
@@ -75,6 +75,6 @@
 
   &:hover &__img {
     transform: translate(-4rem) scale(1);
-    filter: blur(.3rem) brightness(80%);
+    filter: blur(0.3rem) brightness(80%);
   }
 }
