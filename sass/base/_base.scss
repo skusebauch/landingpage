@@ -9,16 +9,18 @@
 html {
   /* rem-setting: that one rem is 10 px - rem depends on root fontsize - 16px is default - we want 10 px - therefore 62.5%  */
   font-size: 62.5%; //1rem = 10px; 10px/16px = 62,5%;
-
+  background-color: $color-gray-light-1;
   // @include respond(phone) {
   //   font-size: 50%;
   // } --> dont need this
   // at max midth the following order is essential
 
-  @include respond(tab-land) { // width < 1200
+  @include respond(tab-land) {
+    // width < 1200
     font-size: 56.25%; //1rem should be 9px, 9/16 = 56,25%
   }
-  @include respond(tab-port) { // width < 900
+  @include respond(tab-port) {
+    // width < 900
     font-size: 50%; //1px should be 8px, 8/16 = 50%;
   }
   @include respond(big-desktop) {
