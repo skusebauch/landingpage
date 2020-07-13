@@ -1,5 +1,4 @@
 .navigation {
-
   &__checkbox {
     display: none;
   }
@@ -14,7 +13,7 @@
     right: 6rem;
     border-radius: 50%;
     z-index: 2000;
-    box-shadow: 0 1rem 3rem rgba($color-black, .1);
+    box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
     cursor: pointer;
     @include respond(tab-port) {
       top: 4rem;
@@ -33,9 +32,12 @@
     position: fixed;
     top: 6.5rem;
     right: 6.5rem;
-    background-image: radial-gradient($color-primary-light, $color-primary-dark);
+    background-image: radial-gradient(
+      $color-primary-light,
+      $color-primary-dark
+    );
     z-index: 1000;
-    transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1);
+    transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
     @include respond(tab-port) {
       top: 4.5rem;
       right: 4.5rem;
@@ -52,9 +54,10 @@
     top: 0;
     left: 0;
     z-index: 1500;
+    pointer-events: none;
     opacity: 0;
     width: 0;
-    transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   &__list {
@@ -64,8 +67,7 @@
     transform: translate(-50%, -50%);
     list-style: none;
     text-align: center;
-    width: 100%
-
+    width: 100%;
   }
 
   &__item {
@@ -75,19 +77,21 @@
   &__link {
     &:link,
     &:visited {
-      display:inline-block;
+      display: inline-block;
       font-size: 3rem;
       font-weight: 300;
       padding: 1rem 2rem;
       color: $color-white;
       text-transform: uppercase;
       text-decoration: none;
-      background-image: linear-gradient(120deg,
-                        transparent 0%,
-                        transparent 50%,
-                        $color-white 50%);
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        $color-white 50%
+      );
       background-size: 230%;
-      transition: all .4s;
+      transition: all 0.4s;
       span {
         margin-right: 1.5rem;
         display: inline-block;
@@ -104,10 +108,14 @@
   // FUNCTIONALLITY
   &__checkbox:checked ~ &__background {
     transform: scale(80);
+    @include respond(big-desktop) {
+      transform: scale(105);
+    }
   }
   &__checkbox:checked ~ &__nav {
     opacity: 1;
     width: 100%;
+    pointer-events: auto;
   }
 
   //ICON
@@ -128,12 +136,16 @@
       content: "";
       position: absolute;
       left: 0;
-      transition: all .2s;
+      transition: all 0.2s;
     }
 
     // transform-origin: right: to avoid rotate of center
-    &::before { top: -.8rem; ;}
-    &::after { top: .8rem; }
+    &::before {
+      top: -0.8rem;
+    }
+    &::after {
+      top: 0.8rem;
+    }
   }
 
   &__button:hover &__icon::before {
